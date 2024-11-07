@@ -22,6 +22,9 @@ const TokenDisplay = ({ tokens, tokensPerRow, color }) => {
               textAlign: "center",
               bgcolor: color === "blue" ? "primary.main" : "error.main",
               color: "white",
+              fontWeight: "bold",
+              padding: 3,
+              margin: 1,
             }}
           >
             {token}
