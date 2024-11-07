@@ -16,17 +16,12 @@ A modern **Token Generator** application built with **React**, **Material UI**, 
 ---
 
 ## Screenshots
- "./public/logo512.png"
- "./public/Assets/lightmode.png"
-
-
-
 
 ### Light Mode
-![Light Mode](link_to_screenshot_light_mode)
 
 ### Dark Mode
-![Dark Mode](link_to_screenshot_dark_mode)
+![Light Mode](./public/Assets/lightmode.png)
+![Dark Mode](./public/Assets/image.png)
 
 ---
 
@@ -105,18 +100,17 @@ The token length is validated using **Yup** to ensure that users input a valid n
 │   └── favicon.ico
 ├── /src
 │   ├── /components
-│   │   ├── TokenGenerator.js
-│   │   ├── Header.js
-│   │   └── ThemeToggle.js
-│   ├── /context
-│   │   └── ThemeContext.js
-│   ├── /utils
-│   │   └── tokenUtils.js
+│   │   ├── ThemeToggle.jsx
+│   │   ├── TokenDisplay.jsx
+│   │   └── TokenGenerate.jsx
+│   │   └── TokenInput.jsx
+│   ├── /theme
+│   │   └── theme.js 
 │   ├── App.js
 │   ├── App.css
-│   ├── index.js
-│   └── theme.js
+│   ├── index.css
 └── package.json
+└── package-lock.json
 ```
 
 - **/components**: Contains React components such as `TokenGenerator`, `Header`, and `ThemeToggle`.
