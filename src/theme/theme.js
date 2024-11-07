@@ -16,7 +16,7 @@ export const getDesignTokens = (mode) => ({
         }
       : {
           primary: {
-            main: "#90caf9",
+            main: "#3333F8FF",
           },
           error: {
             main: "#f44336",

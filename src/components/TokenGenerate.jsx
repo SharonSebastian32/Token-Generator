@@ -135,16 +135,15 @@ const TokenGenerator = () => {
           transition: "background-color 0.3s ease",
         }}
       >
-        <Container maxWidth="lg" sx={{ pt: 4, pb: 4 }}>
+        <Container maxWidth="lg" sx={{ pt: 3, pb: 4 }}>
           <Card>
             <CardHeader
-              title="Token Generator"
               action={
                 <ThemeToggle mode={mode} toggleColorMode={toggleColorMode} />
               }
-            />
+            />{" "}
+            <h1 style={{ textAlign: "center" }}>Token Generator</h1>
             <CardContent>
-              {/* Show error message if validation fails */}
               {Object.keys(errors).length > 0 && (
                 <Alert severity="error" sx={{ mb: 2 }}>
                   <ul>

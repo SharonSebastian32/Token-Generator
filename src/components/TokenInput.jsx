@@ -6,9 +6,7 @@ const TokenInput = ({ color, formData, handleInputChange, error }) => {
 
   return (
     <Grid item xs={12} md={6}>
-      <Typography variant="h6" gutterBottom>
-        {capitalizedColor} Tokens
-      </Typography>
+      <Typography variant="h6" gutterBottom></Typography>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <TextField
           label={`Number of ${color} tokens`}
