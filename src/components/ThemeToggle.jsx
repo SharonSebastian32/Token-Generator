@@ -9,4 +9,4 @@ const ThemeToggle = ({ mode, toggleColorMode }) => (
   </IconButton>
 );
 
-export default ThemeToggle;
+export default React.memo(ThemeToggle);
