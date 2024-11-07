@@ -2,11 +2,13 @@ import React from "react";
 import { Box, Typography, TextField, Grid } from "@mui/material";
 
 const TokenInput = ({ color, formData, handleInputChange, error }) => {
-  const capitalizedColor = color.charAt(0).toUpperCase() + color.slice(1);
-
   return (
     <Grid item xs={12} md={6}>
-      <Typography variant="h6" gutterBottom></Typography>
+      <Typography variant="h6" gutterBottom>
+        {`${
+          color.charAt(0).toUpperCase() + color.slice(1)
+        } Token Configuration`}
+      </Typography>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <TextField
           label={`Number of ${color} tokens`}
@@ -17,7 +19,7 @@ const TokenInput = ({ color, formData, handleInputChange, error }) => {
           fullWidth
           required
           error={!!error[`${color}Tokens`]}
-          helperText={error[`${color}Tokens`]}
+          helperText={error[`${color}Tokens`] || ""}
         />
         <TextField
           label={`Prefix for ${color} tokens`}
@@ -27,10 +29,12 @@ const TokenInput = ({ color, formData, handleInputChange, error }) => {
           fullWidth
           required
           error={!!error[`${color}Prefix`]}
-          helperText={error[`${color}Prefix`]}
+          helperText={error[`${color}Prefix`] || ""}
         />
         <TextField
-          label={`${capitalizedColor} tokens per row`}
+          label={`${
+            color.charAt(0).toUpperCase() + color.slice(1)
+          } tokens per row`}
           name={`${color}TokensPerRow`}
           type="number"
           value={formData[`${color}TokensPerRow`]}
@@ -38,7 +42,7 @@ const TokenInput = ({ color, formData, handleInputChange, error }) => {
           fullWidth
           required
           error={!!error[`${color}TokensPerRow`]}
-          helperText={error[`${color}TokensPerRow`]}
+          helperText={error[`${color}TokensPerRow`] || ""}
         />
       </Box>
     </Grid>
