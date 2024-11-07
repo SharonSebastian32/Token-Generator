@@ -18,9 +18,9 @@ A modern **Token Generator** application built with **React**, **Material UI**, 
 ## Screenshots
 
 ### Light Mode
+![Light Mode](./public/Assets/lightmode.png)
 
 ### Dark Mode
-![Light Mode](./public/Assets/lightmode.png)
 ![Dark Mode](./public/Assets/image.png)
 
 ---
