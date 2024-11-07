@@ -54,7 +54,6 @@ const TokenGenerator = () => {
       redTokensPerRow,
     } = formData;
 
-    // Validate blue tokens
     if (!blueTokens || isNaN(blueTokens) || parseInt(blueTokens) <= 0) {
       newErrors.blueTokens = "Number of blue tokens must be a positive number.";
     }
@@ -70,7 +69,6 @@ const TokenGenerator = () => {
         "Blue tokens per row must be a positive number.";
     }
 
-    // Validate red tokens
     if (!redTokens || isNaN(redTokens) || parseInt(redTokens) <= 0) {
       newErrors.redTokens = "Number of red tokens must be a positive number.";
     }
@@ -88,28 +86,18 @@ const TokenGenerator = () => {
 
     setErrors(newErrors);
 
-    // Return true if no errors
     return Object.keys(newErrors).length === 0;
   };
 
   const generateTokens = () => {
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
-    const blueTokensArray = Array.from(
-      { length: parseInt(formData.blueTokens) || 0 },
-      (_, i) => `${formData.bluePrefix}${i + 1}`
-    );
-
-    const redTokensArray = Array.from(
-      { length: parseInt(formData.redTokens) || 0 },
-      (_, i) => `${formData.redPrefix}${i + 1}`
-    );
+    const createTokenArray = (prefix, count) =>
+      Array.from({ length: parseInt(count) }, (_, i) => `${prefix}${i + 1}`);
 
     setTokens({
-      blue: blueTokensArray,
-      red: redTokensArray,
+      blue: createTokenArray(formData.bluePrefix, formData.blueTokens),
+      red: createTokenArray(formData.redPrefix, formData.redTokens),
     });
   };
 
@@ -141,7 +129,7 @@ const TokenGenerator = () => {
               action={
                 <ThemeToggle mode={mode} toggleColorMode={toggleColorMode} />
               }
-            />{" "}
+            />
             <h1 style={{ textAlign: "center" }}>Token Generator</h1>
             <CardContent>
               {Object.keys(errors).length > 0 && (

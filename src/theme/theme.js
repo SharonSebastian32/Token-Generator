@@ -10,7 +10,7 @@ export const getDesignTokens = (mode) => ({
             main: "#d32f2f",
           },
           background: {
-            default: "#f5f5f5",
+            default: "#EFEFEFFF",
             paper: "#fff",
           },
         }
